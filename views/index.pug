@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  // Iterate through the messages array
+  each message in messages
+    .message
+      p User: #{message.user}
+      p Text: #{message.text}
+      p Date: #{message.added.toLocaleString()} 
+      hr 
+  
+  a(href='/new')
+    button Add New Message
